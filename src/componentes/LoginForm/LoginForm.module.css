@@ -14,14 +14,14 @@
     text-align: center;
 }
 
-.wrapper .input-box{
+.wrapper .input_box{
     position: relative;
     width: 100%;
     height: 50px;
     margin: 30px 0;
 }
 
-.input-box input{
+.input_box input{
     width: 100%;
     height: 100%;
     background: transparent;
@@ -34,36 +34,36 @@
     padding: 20px 45px 20px 20px;
 }
 
-.input-box input::placeholder{
+.input_box input::placeholder{
     color: #fff;
 }
 
-.input-box .icon{
+.input_box .icon{
     position: absolute;
     right: 20px;
     top: 35%;
     transform: translate(-50%);
     font-size: 16px;
-}
+} 
 
-.wrapper .remember-forgot{
+.wrapper .remember_forgot{
     display: flex;
     justify-content: space-between;
     font-size: -14.5px;
     margin: -15px 0 15px;
 }
 
-.remember-forgot label input{
+.remember_forgot label input{
     accent-color: #fff;
     margin-right: 4px;
 }
 
-.remember-forgot a {
+.remember_forgot a {
     color: #fff;
     text-decoration: none;
 }
 
-.remember-forgot a:hover {
+.remember_forgot a:hover {
     text-decoration: underline;
 }
 
@@ -81,7 +81,7 @@
     font-weight: 700;
 }
 
-.circle-image {
+.circle_image {
     position: absolute;
     top: -150px;
     left: 50%;
@@ -90,7 +90,7 @@
     height: 250px;
 }
 
-.circle-image img {
+.circle_image img {
     width: 100%;
     height: 100%;
 }

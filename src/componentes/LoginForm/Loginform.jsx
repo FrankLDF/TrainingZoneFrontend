@@ -1,34 +1,34 @@
 
-import './LoginForm.css';
+import estil from './LoginForm.module.css';
 import { FaUser, FaLock  } from "react-icons/fa";
 import LogoT from '../../assets/file_upscayl_4x_realesrgan-x4plus.png';
 
 
 const LoginForm = () => {
-    return(
-        <div className="wrapper">
-            <form action="">
-                <h1>Login</h1>
-                <h1>klk</h1>
-                <div className="circle-image">
-        <img src={LogoT} alt="Logo" />
-                </div>
-                <div className="input-box">
-                    <input type="text" placeholder="Usuario:" required />
-                    <FaUser className="icon"/>
-                </div>
-                <div className="input-box">
-                    <input type="password" placeholder="Contraseña:" required />
-                    <FaLock className="icon" />
-                </div>
-                <div className="remember-forgot">
-                    <label><input type="checkbox"/> Recuerdame</label>
-                </div>
-                
-                <button type="submit">Acceder</button>
-                <button type="submit">Cambio</button>
-            </form>
-        </div>
+    return (
+      <div className={estil.wrapper}>
+        <form action="">
+          <h1>Login</h1>
+          <div className={estil.circle_image}>
+            <img src={LogoT} alt="Logo" />
+          </div>
+          <div className={estil.input_box}>
+            <input type="text" placeholder="Usuario:" required />
+                    <FaUser className={estil.icon} />
+          </div>
+          <div className={estil.input_box}>
+            <input type="password" placeholder="Contraseña:" required />
+            <FaLock className={estil.icon} />
+          </div>
+                <div className={estil.remember_forgot}>
+            <label>
+              <input type="checkbox" /> Recuerdame
+            </label>
+          </div>
+
+          <button type="submit">Acceder</button>
+        </form>
+      </div>
     );
 };
 
