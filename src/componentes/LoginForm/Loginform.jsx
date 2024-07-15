@@ -9,7 +9,7 @@ const LoginForm = () => {
         <div className="wrapper">
             <form action="">
                 <h1>Login</h1>
-                <h1>Login</h1>
+                <h1>klk</h1>
                 <div className="circle-image">
         <img src={LogoT} alt="Logo" />
                 </div>
