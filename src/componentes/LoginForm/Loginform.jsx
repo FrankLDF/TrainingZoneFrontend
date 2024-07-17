@@ -1,7 +1,7 @@
 
 import estil from './LoginForm.module.css';
 import { FaUser, FaLock  } from "react-icons/fa";
-import LogoT from '../../assets/file_upscayl_4x_realesrgan-x4plus.png';
+import LogoT from '../../assets/logo.png';
 
 
 const LoginForm = () => {
