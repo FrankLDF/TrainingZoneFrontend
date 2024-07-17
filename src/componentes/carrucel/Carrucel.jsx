@@ -34,7 +34,7 @@ export default function Carrucel() {
           <img
             src="https://www.dragonrojo.net/images/entrena-tu-mente-fortalece-tu-cuerpo.jpeg"
             className="d-block w-100"
-            style={{ maxHeight: "60vh" }}
+            style={{ minHeight: "45vh", maxHeight: "60vh" }}
             alt="Slide 1"
           />
           <div className="carousel-caption d-none d-md-block">
@@ -45,7 +45,7 @@ export default function Carrucel() {
           <img
             src="https://www.shutterstock.com/image-photo/men-woman-dumbbells-gym-workout-600nw-2228263009.jpg"
             className="d-block w-100"
-            style={{ maxHeight: "60vh" }}
+            style={{ minHeight: "45vh", maxHeight: "60vh" }}
             alt="Slide 2"
           />
           <div className="carousel-caption d-none d-md-block">
@@ -56,7 +56,7 @@ export default function Carrucel() {
           <img
             src="https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1024-512,f_auto,q_auto:best/newscms/2019_05/2732526/190128-exercise-gym-ac-556p.jpg"
             className="d-block w-100"
-            style={{ maxHeight: "60vh" }}
+            style={{ minHeight: "45vh", maxHeight: "60vh" }}
             alt="Slide 3"
           />
           <div className="carousel-caption d-none d-md-block">

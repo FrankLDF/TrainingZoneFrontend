@@ -14,7 +14,7 @@ export default function HeadHome() {
           Iniciar Sesión
         </NavLink>
       ) : (
-        <p className="btn btn-outline-light" onClick={handleLogout}>
+        <p className="btn btn-outline-light" onClick={async()=>await handleLogout()}>
           Cerrar Sesión
         </p>
       )}
