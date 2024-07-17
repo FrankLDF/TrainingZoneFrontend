@@ -1,15 +1,17 @@
-import { Routes, Route, Navigate } from "react-router-dom"
-import HomeOutsite from "../componentes/pages/HomeOutsite"
-import LoginPage from "../componentes/pages/LoginPage"
+import { Routes, Route } from "react-router-dom"
+import PrivateMileware from "./PrivateMidleware"
+import Home from "../componentes/pages/HomePage"
 import NotFound from "../componentes/pages/NotFound";
 
-export default function interRoutes() {
+export default function InterRoutes() {
   return (
     <div>
       <Routes>
-        <Route path="/home" element={<HomeOutsite />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/" element={<Navigate to={'/home'} />} />
+        <Route path="/staff" element={
+          <PrivateMileware>
+            <Home />
+          </PrivateMileware>
+        } />
         <Route path="/*" element={<NotFound/>} />
       </Routes>
     </div>

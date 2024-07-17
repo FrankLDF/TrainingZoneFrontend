@@ -1,14 +1,14 @@
-import LoginForm from "./componentes/LoginForm/Loginform"
-
+import ProviderData from "./context/ProviderContext";
+import OutRoutes from "./routes/OutRoutes";
 
 function App() {
-  
-
   return (
     <>
-      <LoginForm/>
+      <ProviderData>
+        <OutRoutes />
+      </ProviderData>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
