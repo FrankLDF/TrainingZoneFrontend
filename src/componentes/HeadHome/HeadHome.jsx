@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png"
 import ContextData from "../../context/ContextData";
 import { useContext } from "react";
@@ -10,9 +10,9 @@ export default function HeadHome() {
       <img src={logo} alt="logo del GYM" className="img-fluid w-home-ico" />
 
       {!userData ? (
-        <NavLink to="/login" className="btn btn-outline-light">
+        <Link to="/login" className="btn btn-outline-light">
           Iniciar Sesión
-        </NavLink>
+        </Link>
       ) : (
         <p className="btn btn-outline-light" onClick={async()=>await handleLogout()}>
           Cerrar Sesión
