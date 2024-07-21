@@ -1,10 +1,10 @@
 import Carrucel from "../carrucel/Carrucel";
-import HeadHome from "../HeadHome/HeadHome";
+import Navbar from "../navbar/navbar";
 
 export default function HomeOutsite() {
   return (
     <div className="bg-secondari text-defaul">
-      <HeadHome />
+      <Navbar />
       <h1 className="text-center p-3 text-primari font-secondari">
         BIENVENIDO A TRAINING ZONE
       </h1>
