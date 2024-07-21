@@ -30,11 +30,11 @@
   background-color: rgb(32, 32, 32);
 }
 
-.font-primari{
+/* .font-primari{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+} */
 
 .font-secondari{
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  letter-spacing:2px;
+  font-family: Roboto,;
+  /* letter-spacing:2px; */
 }
