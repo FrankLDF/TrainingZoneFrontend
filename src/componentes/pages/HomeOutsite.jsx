@@ -1,5 +1,5 @@
 import Carrucel from "../carrucel/Carrucel";
-import Navbar from "../navbar/navbar";
+import Navbar from "../Navbar/navbar";
 
 export default function HomeOutsite() {
   return (
