@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import HomeOutsite from "../componentes/pages/HomeOutsite";
 import LoginPage from "../componentes/pages/LoginPage";
 import InterRoutes from "./InterRoutes";
+import PublicMidleware from "./PublicMidleware";
 
 // Componente de rutas publicas (rutas que pueden ser accedidas sin necesidad de login)
 export default function OutRoutes() {
@@ -9,7 +10,14 @@ export default function OutRoutes() {
     <div>
       <Routes>
         <Route path="/home" element={<HomeOutsite />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route
+          path="/login"
+          element={
+            <PublicMidleware>
+              <LoginPage />
+            </PublicMidleware>
+          }
+        />
         <Route path="/" element={<Navigate to={"/home"} />} />
         <Route path="/*" element={<InterRoutes />} />
       </Routes>
