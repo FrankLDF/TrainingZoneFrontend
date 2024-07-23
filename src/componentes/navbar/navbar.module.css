@@ -1,5 +1,5 @@
 .header {
-    position: absolute;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
@@ -8,8 +8,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    z-index: 50;
+    transition: background 0.3s, backdrop-filter 0.3s;
 }
+
+.header.scrolled {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+}
+
 .logo{
     top: -150px;
     left: 50%;
