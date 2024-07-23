@@ -8,7 +8,6 @@ export default function PrivateMidleware({children}) {
 
     // extraer info del contexto para saver si es usuarios esta logueado
     const {userData}= useContext(ContextData)
-    console.log(userData)
     return (
         (!userData)
         ? <Navigate to={'/login'} />

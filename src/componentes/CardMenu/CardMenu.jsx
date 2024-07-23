@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom"
+import stil from "./CardMenu.module.css"
 
 export default function CardMenu({titulo, Icono, ruta}) {
   return (
-    <Link to={ruta} style={{width:"30%",padding:"20px",borderRadius:"20px", backgroundColor:"#666", color:"#000"}}>
-      <Icono/>
-      <span>{ titulo}</span>
+    <Link to={ruta} className={stil.containerLink}>
+      <Icono className={stil.icon} />
+      <span className={stil.titulo}>{titulo}</span>
     </Link>
-  )
+  );
 }

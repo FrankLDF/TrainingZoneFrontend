@@ -1,0 +1,19 @@
+.containerLink{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(166, 27, 27);
+    align-items: center;
+    justify-content: center;
+}
+.icon{
+    color: #fff;
+    font-size: 3rem;
+}
+.titulo{
+    color: #fff;
+    font-size: 2rem;
+}
