@@ -18,7 +18,19 @@ const{handleLogout} = useContext(ContextData)
       <section className={`${stil.sectionContainer} ${stil.navlinkContiner}`}>
         <NavLink
           className={({ isActive }) => (isActive ? `${stil.active}` : null)}
+          to={"/staff"}
+        >
+          Inicio
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? `${stil.active}` : null)}
           to={"/admin-clients"}
+        >
+          Clientes
+        </NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? `${stil.active}` : null)}
+          to={"/admin-register"}
         >
           Registrar
         </NavLink>

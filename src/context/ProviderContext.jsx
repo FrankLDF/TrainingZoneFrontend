@@ -4,6 +4,7 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 
 export default function ProviderContext({ children }) {
+  const [loading, setLoading]=useState(false)
   const [userData, setUserData] = useState(() => {
     // Inicializar estado con los datos de localStorage si existen
     const storedUserData = localStorage.getItem("userData");
@@ -49,7 +50,7 @@ export default function ProviderContext({ children }) {
   };
 
   return (
-    <ContextData.Provider value={{ userData, handleLogin, handleLogout }}>
+    <ContextData.Provider value={{ userData, handleLogin, handleLogout, loading, setLoading }}>
       {children}
     </ContextData.Provider>
   );

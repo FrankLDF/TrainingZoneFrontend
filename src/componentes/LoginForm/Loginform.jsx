@@ -13,13 +13,14 @@ import LogoT from "../../assets/logo.png"; // importa el logo
 
 // importando iconos desde react-icons
 import { FaUser, FaLock } from "react-icons/fa";
+import LoadingComponent from "../Loading/LoadingComponent";
 
 // componente----
 const LoginForm = () => {
 
   const navigate = useNavigate();
   // extrallendo la funcion que alamacena la informacion en el storage
-  const { handleLogin } = useContext(ContextData);
+  const { handleLogin, loading, setLoading } = useContext(ContextData);
 
   const {
     register,
@@ -29,8 +30,9 @@ const LoginForm = () => {
 
   // funcion para enviar datos al servidor
   const SubmitLogin = async (data) => {
+    setLoading(true)
     try {
-      const response = await fetch("http://localhost:5000/v1/auth/login", {
+      const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/v1/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -44,6 +46,8 @@ const LoginForm = () => {
         // guardar los datos en elcontexto
         handleLogin(result.resultLogin.user);
 
+        setLoading(false)
+        
         // navegar hacia el staff
         navigate("/staff", { replace: true });
         Swal.fire({
@@ -55,6 +59,7 @@ const LoginForm = () => {
         });
       } else {
         console.error(result.message);
+        setLoading(false)
         
         Swal.fire({
           icon: "error",
@@ -68,48 +73,51 @@ const LoginForm = () => {
   };
 
   return (
-    <div className={`  bg-primari ${estil.wrapper}`}>
+    <>
+      {loading && <LoadingComponent />}
+        <div className={`  bg-primari ${estil.wrapper}`}>
+        {/* Div que contiene la imagen del logo */}
+        <div className={` ${estil.circle_image}`}>
+          <img src={LogoT} alt="Logo" />
+        </div>
 
-      {/* Div que contiene la imagen del logo */}
-      <div className={` ${estil.circle_image}`}>
-        <img src={LogoT} alt="Logo" />
+        <form className="bg-secondari" onSubmit={handleSubmit(SubmitLogin)}>
+          <h1>Login</h1>
+
+          <div className={estil.input_box}>
+            <input
+              type="text"
+              placeholder="Usuario:"
+              {...register("usuario", { required: true })}
+            />
+            <FaUser className={estil.icon} />
+            {errors.usuario?.type === "required" && (
+              <p className="text-danger">Este campo es obligatorio</p>
+            )}
+          </div>
+
+          <div className={estil.input_box}>
+            <input
+              type="password"
+              placeholder="Contraseña:"
+              {...register("contrasena", { required: true, minLength: 6 })}
+            />
+            <FaLock className={estil.icon} />
+            {errors.contrasena?.type === "required" && (
+              <p className="text-danger">Este campo es obligatorio</p>
+            )}
+            {errors.contrasena?.type === "minLength" && (
+              <p className="text-danger">
+                Este campo deve tener mas de 6 caracteres
+              </p>
+            )}
+          </div>
+
+          <button className={estil.button}>Acceder</button>
+        </form>
       </div>
-
-      <form className="bg-secondari" onSubmit={handleSubmit(SubmitLogin)}>
-        <h1>Login</h1>
-
-        <div className={estil.input_box}>
-          <input
-            type="text"
-            placeholder="Usuario:"
-            {...register("usuario", { required: true })}
-          />
-          <FaUser className={estil.icon} />
-          {errors.usuario?.type === "required" && (
-            <p className="text-danger">Este campo es obligatorio</p>
-          )}
-        </div>
-
-        <div className={estil.input_box}>
-          <input
-            type="password"
-            placeholder="Contraseña:"
-            {...register("contrasena", { required: true, minLength: 6 })}
-          />
-          <FaLock className={estil.icon} />
-          {errors.contrasena?.type === "required" && (
-            <p className="text-danger">Este campo es obligatorio</p>
-          )}
-          {errors.contrasena?.type === "minLength" && (
-            <p className="text-danger">
-              Este campo deve tener mas de 6 caracteres
-            </p>
-          )}
-        </div>
-
-        <button className={estil.button}>Acceder</button>
-      </form>
-    </div>
+      
+    </>
   );
 };
 

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import nav from "./navbar.module.css";
 import LogoT from "../../assets/logo.png";
@@ -26,9 +27,9 @@ export default function Navbar() {
       <img src={LogoT} className={nav.logo} alt="logo" />
 
       <nav className={nav.navbar}>
-        <a href="/">Inicio de seccion</a>
-        <a href="/">Sobre nosotros</a>
-        <a href="/">Nuestras redes</a>
+        <Link to={"/staff"}>Inicio de seccion</Link>
+        <Link to={"/#"}>Sobre nosotros</Link>
+        <Link to={"/#"}>Nuestras redes</Link>
       </nav>
     </header>
   );
