@@ -27,9 +27,9 @@ export default function Navbar() {
       <img src={LogoT} className={nav.logo} alt="logo" />
 
       <nav className={nav.navbar}>
+        <Link to={"/"}>Home</Link>
+        <Link to={"/about"}>Sobre nosotros</Link>
         <Link to={"/staff"}>Inicio de seccion</Link>
-        <Link to={"/#"}>Sobre nosotros</Link>
-        <Link to={"/#"}>Nuestras redes</Link>
       </nav>
     </header>
   );

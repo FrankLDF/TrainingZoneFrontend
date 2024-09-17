@@ -14,10 +14,10 @@ export default function HomeOutsite() {
       </p>
       <Carrucel />
       <Footer/>
-      <h2 className="w-50 font-secondari text-primari p-5 text-center mt-5 ms-auto me-auto">
+      <h2 className="w-50 font-secondari text-primari p-5 text-center ms-auto me-auto">
         Únete a nosotros hoy!
       </h2>
-      <h3 className="w-50 font-primari p-5 text-center mt-5 ms-auto me-auto">
+      <h3 className="w-50 font-primari p-5 text-center  ms-auto me-auto">
         ¡Explora nuestras instalaciones y sé parte de nuestra comunidad de
         entrenamiento! Inicia sesión para acceder a tu cuenta y descubrir todo
         lo que Training Zone tiene para ofrecerte.
